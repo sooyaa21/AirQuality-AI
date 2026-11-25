@@ -1,0 +1,779 @@
+
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AirQuality AI | Smart Prediction</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+<div class="ambient ambient-one"></div>
+<div class="ambient ambient-two"></div>
+
+<div class="layout">
+
+    <aside class="sidebar">
+
+        <div class="brand">
+            <div class="brand-icon">✦</div>
+            <div>
+                <h2>AirQuality<span>AI</span></h2>
+                <small>INTELLIGENCE SYSTEM</small>
+            </div>
+        </div>
+
+        <div class="nav-label">WORKSPACE</div>
+
+        <nav>
+            <a href="#dashboard" class="nav-item active">
+                <span>◈</span> Dashboard
+            </a>
+
+            <a href="#prediction" class="nav-item">
+                <span>⌁</span> Prediksi CO
+            </a>
+
+            <a href="#analytics" class="nav-item">
+                <span>▥</span> Model Analytics
+            </a>
+        </nav>
+
+        <div class="sidebar-bottom">
+
+            <div class="model-status">
+                <span class="status-dot"></span>
+                <div>
+                    <strong>Model Online</strong>
+                    <small>Random Forest Engine</small>
+                </div>
+            </div>
+
+            <div class="sidebar-footer">
+                <span>AI PROJECT</span>
+                <strong>Air Quality Prediction</strong>
+            </div>
+
+        </div>
+
+    </aside>
+
+
+    <main class="main-content">
+
+        <header class="topbar">
+
+            <div>
+                <div class="breadcrumb">Workspace / Dashboard</div>
+                <h1>Air Quality Intelligence</h1>
+            </div>
+
+            <div class="top-right">
+                <div class="live-pill">
+                    <span class="status-dot"></span>
+                    SYSTEM READY
+                </div>
+
+                <div class="avatar">AQ</div>
+            </div>
+
+        </header>
+
+
+        <!-- HERO -->
+
+        <section id="dashboard" class="hero">
+
+            <div class="hero-content">
+
+                <div class="eyebrow">
+                    <span class="sparkle">✦</span>
+                    ARTIFICIAL INTELLIGENCE PLATFORM
+                </div>
+
+                <h2>
+                    Understand the air.<br>
+                    <span>Predict the future.</span>
+                </h2>
+
+                <p>
+                    AirQuality AI membantu memperkirakan konsentrasi
+                    karbon monoksida (CO) menggunakan teknologi
+                    Machine Learning dengan algoritma Random Forest.
+                </p>
+
+                <a href="#prediction" class="primary-button">
+                    Mulai Prediksi <span>↗</span>
+                </a>
+
+            </div>
+
+            <div class="hero-visual">
+
+                <div class="orbit orbit-one"></div>
+                <div class="orbit orbit-two"></div>
+
+                <div class="planet">
+                    <div class="planet-inner">AQ</div>
+                </div>
+
+                <div class="float-card float-top">
+                    <span class="mini-dot"></span>
+                    AI ANALYSIS
+                </div>
+
+                <div class="float-card float-bottom">
+                    <strong>83.66%</strong>
+                    <small>MODEL R² SCORE</small>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- OVERVIEW -->
+
+        <section class="section-heading">
+
+            <div>
+                <div class="eyebrow">PERFORMANCE OVERVIEW</div>
+                <h2>Model Overview</h2>
+            </div>
+
+            <span class="section-note">Random Forest Regression</span>
+
+        </section>
+
+
+        <section class="stats-grid">
+
+            <div class="stat-card">
+                <div class="stat-top">
+                    <span>DATASET</span>
+                    <span class="stat-icon cyan">▦</span>
+                </div>
+
+                <h3>7,674</h3>
+                <p>Data setelah pembersihan</p>
+                <div class="stat-bottom">AIR QUALITY DATASET</div>
+            </div>
+
+
+            <div class="stat-card">
+                <div class="stat-top">
+                    <span>R² SCORE</span>
+                    <span class="stat-icon purple">◈</span>
+                </div>
+
+                <h3>83.66%</h3>
+                <p>Skor evaluasi pada data testing</p>
+                <div class="stat-bottom">MODEL PERFORMANCE</div>
+            </div>
+
+
+            <div class="stat-card">
+                <div class="stat-top">
+                    <span>FEATURES</span>
+                    <span class="stat-icon blue">⌘</span>
+                </div>
+
+                <h3>15</h3>
+                <p>Variabel input model</p>
+                <div class="stat-bottom">INPUT VARIABLES</div>
+            </div>
+
+
+            <div class="stat-card">
+                <div class="stat-top">
+                    <span>ESTIMATORS</span>
+                    <span class="stat-icon orange">✳</span>
+                </div>
+
+                <h3>100</h3>
+                <p>Pohon keputusan</p>
+                <div class="stat-bottom">RANDOM FOREST</div>
+            </div>
+
+        </section>
+
+
+        <!-- PREDICTION -->
+
+        <section id="prediction" class="prediction-section">
+
+            <div class="section-heading">
+
+                <div>
+                    <div class="eyebrow">MACHINE LEARNING ENGINE</div>
+                    <h2>CO Prediction Center</h2>
+
+                    <p class="section-description">
+                        Pilih cara penggunaan yang paling mudah untukmu.
+                    </p>
+                </div>
+
+                <div class="engine-badge">✦ AI POWERED</div>
+
+            </div>
+
+
+            <div class="prediction-layout">
+
+                <!-- FORM CARD -->
+
+                <div class="form-card">
+
+                    <div class="form-header">
+
+                        <div>
+                            <h3>Mulai Prediksi</h3>
+                            <p>Tidak perlu bingung, pilih salah satu mode.</p>
+                        </div>
+
+                        <div class="step-number">AI / CO</div>
+
+                    </div>
+
+
+                    <form method="POST" action="{{ url_for('home') }}#prediction" id="predictionForm">
+
+                        <input type="hidden" name="mode" id="modeInput" value="{{ mode or 'demo' }}">
+
+                        <!-- PILIH MODE -->
+
+                        <div class="mode-selector">
+
+                            <button
+                                type="button"
+                                class="mode-option"
+                                id="demoModeButton"
+                                onclick="selectMode('demo')">
+
+                                <span class="mode-icon">✦</span>
+                                <strong>Mode Demo</strong>
+                                <small>Coba prediksi secara langsung</small>
+
+                            </button>
+
+
+                            <button
+                                type="button"
+                                class="mode-option"
+                                id="manualModeButton"
+                                onclick="selectMode('manual')">
+
+                                <span class="mode-icon">⌁</span>
+                                <strong>Mode Manual</strong>
+                                <small>Masukkan data sendiri</small>
+
+                            </button>
+
+                        </div>
+
+
+                        <!-- MODE DEMO -->
+
+                        <div id="demoPanel" class="mode-panel">
+
+                            <div class="demo-information">
+
+                                <div class="demo-symbol">✦</div>
+
+                                <div>
+                                    <h4>Prediksi Tanpa Input Manual</h4>
+
+                                    <p>
+                                        Belum punya data sensor? Tidak masalah.
+                                        Mode ini menggunakan nilai median dari
+                                        dataset sebagai contoh untuk mencoba model.
+                                    </p>
+
+                                    <small>
+                                        Data contoh berasal dari nilai median
+                                        masing-masing fitur pada dataset.
+                                    </small>
+                                </div>
+
+                            </div>
+
+                            <button type="submit" class="predict-button">
+                                <span>✦</span> Coba Prediksi Sekarang
+                                <span class="button-arrow">→</span>
+                            </button>
+
+                        </div>
+
+
+                        <!-- MODE MANUAL -->
+
+                        <div id="manualPanel" class="mode-panel">
+
+                            <div class="manual-information">
+
+                                <strong>Masukkan Data Pengukuran</strong>
+
+                                <p>
+                                    Isi 15 data berikut berdasarkan hasil
+                                    pengukuran sensor. Setiap kolom sudah
+                                    dilengkapi penjelasan.
+                                </p>
+
+                            </div>
+
+
+                            <div class="input-grid">
+
+                                {% for field in fields %}
+
+                                <div class="input-group">
+
+                                    <label for="{{ field.name }}">
+                                        {{ field.label }}
+                                    </label>
+
+                                    <small class="input-description">
+                                        {{ field.description }}
+                                    </small>
+
+                                    <input
+                                        type="number"
+                                        step="any"
+                                        id="{{ field.name }}"
+                                        name="{{ field.name }}"
+                                        value="{{ field.value }}"
+                                        {% if mode != 'manual' %}disabled{% endif %}
+                                    >
+
+                                </div>
+
+                                {% endfor %}
+
+                            </div>
+
+
+                            <div class="form-info">
+                                <span>ⓘ</span>
+                                Gunakan nilai dari pengukuran sensor.
+                                Jika tidak memiliki data pengukuran,
+                                kamu bisa mencoba Mode Demo.
+                            </div>
+
+
+                            <button type="submit" class="predict-button">
+                                <span>✦</span> Generate Prediction
+                                <span class="button-arrow">→</span>
+                            </button>
+
+                        </div>
+
+                    </form>
+
+                </div>
+
+
+                <!-- RESULT CARD -->
+
+                <div class="result-card">
+
+                    <div class="result-top">
+                        <span class="result-label">PREDICTION RESULT</span>
+                        <span class="result-symbol">✧</span>
+                    </div>
+
+
+                    {% if prediction is not none %}
+
+                        <div class="result-success">
+
+                            <div class="result-caption">
+                                ESTIMATED CO CONCENTRATION
+                            </div>
+
+                            <div class="result-number">
+                                {{ "%.3f"|format(prediction) }}
+                            </div>
+
+                            <div class="result-unit">mg/m³</div>
+
+                        </div>
+
+
+                        <!-- KETERANGAN KONDISI CO -->
+
+                        {% if co_status %}
+
+                        <div style="
+                            margin-top: 22px;
+                            padding: 18px;
+                            border-radius: 14px;
+                            background: rgba(70, 217, 232, 0.08);
+                            border: 1px solid rgba(70, 217, 232, 0.25);
+                        ">
+
+                            <div style="
+                                font-size: 11px;
+                                letter-spacing: 1.5px;
+                                color: #46D9E8;
+                                font-weight: 700;
+                                margin-bottom: 9px;
+                            ">
+                                CO AIR QUALITY ASSESSMENT
+                            </div>
+
+                            <h3 style="
+                                color: #ffffff;
+                                font-size: 19px;
+                                margin-bottom: 8px;
+                            ">
+                                {{ co_status }}
+                            </h3>
+
+                            <p style="
+                                color: #C5D0E4;
+                                font-size: 13px;
+                                line-height: 1.7;
+                                margin-bottom: 10px;
+                            ">
+                                {{ co_message }}
+                            </p>
+
+                            <small style="
+                                display: block;
+                                color: #8999B5;
+                                font-size: 11px;
+                                line-height: 1.6;
+                            ">
+                                Acuan baku mutu CO 1 jam: 10 mg/m³.
+                            </small>
+
+                        </div>
+
+                        {% endif %}
+
+
+                        <div class="result-divider"></div>
+
+
+                        <div class="result-message">
+
+                            <span class="success-icon">✓</span>
+
+                            <div>
+                                <strong>Prediction Completed</strong>
+
+                                <p>
+                                    Prediksi berhasil dilakukan menggunakan
+
+                                    {% if mode == 'demo' %}
+                                        Mode Demo.
+                                    {% else %}
+                                        Mode Manual.
+                                    {% endif %}
+
+                                </p>
+                            </div>
+
+                        </div>
+
+
+                        <div class="result-explanation">
+                            Angka di atas merupakan perkiraan konsentrasi
+                            karbon monoksida (CO) berdasarkan data yang
+                            diproses oleh model.
+                        </div>
+
+
+                    {% else %}
+
+                        <div class="empty-result">
+
+                            <div class="empty-orbit">✦</div>
+
+                            <h3>Ready to Predict?</h3>
+
+                            <p>
+                                Pilih Mode Demo atau Mode Manual.
+                                Hasil perkiraan konsentrasi CO akan
+                                muncul di bagian ini.
+                            </p>
+
+                        </div>
+
+                    {% endif %}
+
+
+                    {% if error %}
+
+                        <div class="error-message">
+                            {{ error }}
+                        </div>
+
+                    {% endif %}
+
+
+                    <div class="result-footer">
+                        <span class="status-dot"></span>
+                        RANDOM FOREST ENGINE ACTIVE
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="prediction-disclaimer">
+
+                <strong>Catatan:</strong>
+
+                Model menggunakan dataset historis Air Quality dari Italia
+                tahun 2004–2005. Hasil prediksi bukan pengukuran udara
+                secara langsung dan bukan kategori resmi ISPU.
+
+                Perbandingan baku mutu CO 1 jam sebesar 10 mg/m³
+                merupakan informasi indikatif, bukan penilaian resmi
+                kualitas udara secara keseluruhan.
+
+            </div>
+
+        </section>
+
+
+        <!-- ANALYTICS -->
+
+        <section id="analytics" class="analytics-section">
+
+            <div class="section-heading">
+
+                <div>
+                    <div class="eyebrow">MODEL INTERPRETATION</div>
+                    <h2>Feature Importance</h2>
+
+                    <p class="section-description">
+                        Lima fitur dengan tingkat kepentingan tertinggi
+                        dalam proses prediksi model.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="analytics-card">
+
+                <div class="analytics-header">
+
+                    <div>
+                        <h3>Top Influential Features</h3>
+                        <p>Random Forest feature importance</p>
+                    </div>
+
+                    <span class="chart-tag">TOP 5</span>
+
+                </div>
+
+
+                <div class="chart-container">
+                    <canvas id="importanceChart"></canvas>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- FOOTER -->
+
+        <footer>
+
+            <div class="footer-brand">
+                AirQuality<span>AI</span>
+            </div>
+
+            <p>
+                Machine Learning Project · Random Forest Regression
+            </p>
+
+            <span>© 2026 AIRQUALITY AI</span>
+
+        </footer>
+
+    </main>
+
+</div>
+
+
+<script>
+
+    // MODE DEMO DAN MANUAL
+
+    function selectMode(mode) {
+
+        const demoPanel = document.getElementById('demoPanel');
+        const manualPanel = document.getElementById('manualPanel');
+
+        const demoButton = document.getElementById('demoModeButton');
+        const manualButton = document.getElementById('manualModeButton');
+
+        const modeInput = document.getElementById('modeInput');
+
+        const manualInputs = manualPanel.querySelectorAll('input');
+
+        modeInput.value = mode;
+
+        if (mode === 'demo') {
+
+            demoPanel.style.display = 'block';
+            manualPanel.style.display = 'none';
+
+            demoButton.classList.add('selected');
+            manualButton.classList.remove('selected');
+
+            manualInputs.forEach(input => {
+                input.disabled = true;
+            });
+
+        } else {
+
+            demoPanel.style.display = 'none';
+            manualPanel.style.display = 'block';
+
+            demoButton.classList.remove('selected');
+            manualButton.classList.add('selected');
+
+            manualInputs.forEach(input => {
+                input.disabled = false;
+            });
+
+        }
+
+    }
+
+
+    // Mempertahankan mode setelah halaman dikirim
+
+    selectMode("{{ mode or 'demo' }}");
+
+
+    // FEATURE IMPORTANCE CHART
+
+    const featureLabels = {{ top_features | map(attribute='name') | list | tojson }};
+    const featureValues = {{ top_features | map(attribute='value') | list | tojson }};
+
+    const ctx = document.getElementById('importanceChart');
+
+    new Chart(ctx, {
+
+        type: 'bar',
+
+        data: {
+
+            labels: featureLabels,
+
+            datasets: [{
+
+                label: 'Feature Importance (%)',
+
+                data: featureValues,
+
+                backgroundColor: [
+                    '#46D9E8',
+                    '#8D79F6',
+                    '#648BFA',
+                    '#A18BFF',
+                    '#47A8CC'
+                ],
+
+                borderRadius: 8,
+                borderSkipped: false,
+                barThickness: 24
+
+            }]
+
+        },
+
+        options: {
+
+            indexAxis: 'y',
+            responsive: true,
+            maintainAspectRatio: false,
+
+            animation: {
+                duration: 1400,
+                easing: 'easeOutQuart'
+            },
+
+            plugins: {
+
+                legend: {
+                    display: false
+                }
+
+            },
+
+            scales: {
+
+                x: {
+
+                    beginAtZero: true,
+
+                    grid: {
+                        color: 'rgba(255,255,255,0.06)'
+                    },
+
+                    ticks: {
+
+                        color: '#8999B5',
+
+                        callback: value => value + '%'
+
+                    }
+
+                },
+
+                y: {
+
+                    grid: {
+                        display: false
+                    },
+
+                    ticks: {
+                        color: '#C5D0E4'
+                    }
+
+                }
+
+            }
+
+        }
+
+    });
+
+
+    // ACTIVE SIDEBAR NAVIGATION
+
+    document.querySelectorAll('.nav-item').forEach(link => {
+
+        link.addEventListener('click', function () {
+
+            document.querySelectorAll('.nav-item').forEach(item => {
+                item.classList.remove('active');
+            });
+
+            this.classList.add('active');
+
+        });
+
+    });
+
+</script>
+
+</body>
+</html>
